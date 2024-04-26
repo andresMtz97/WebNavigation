@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2qx-bc-6hx">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Url-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WebNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTE-ZX-c8H">
+                                <rect key="frame" x="145.66666666666666" y="408.66666666666669" width="102" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Open URL"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZTE-ZX-c8H" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="13Y-Wu-ERI"/>
+                            <constraint firstItem="ZTE-ZX-c8H" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSb-qS-8Lx"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Url" image="link" catalog="system" id="5BK-Fh-ivA" userLabel="url">
+                        <imageReference key="selectedImage" image="link" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1050" y="-505"/>
+        </scene>
+        <!--WebKit-->
+        <scene sceneID="J1c-P6-Rsz">
+            <objects>
+                <viewController id="doI-qc-Jv4" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9rR-Rt-VCz">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="webkit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il6-Hb-eiH">
+                                <rect key="frame" x="171.33333333333334" y="415.66666666666669" width="50.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GZg-3g-O85"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="il6-Hb-eiH" firstAttribute="centerY" secondItem="9rR-Rt-VCz" secondAttribute="centerY" id="5GO-ar-udS"/>
+                            <constraint firstItem="il6-Hb-eiH" firstAttribute="centerX" secondItem="9rR-Rt-VCz" secondAttribute="centerX" id="EKR-Gq-jic"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="WebKit" image="globe" catalog="system" selectedImage="globe" id="ueE-zA-99v"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ey4-fO-dhm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370.2290076335876" y="-239.43661971830988"/>
+        </scene>
+        <!--Safari-->
+        <scene sceneID="B78-vU-2pE">
+            <objects>
+                <viewController id="8aT-hg-WfB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ucT-IB-jRS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="safari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY9-LW-yVc">
+                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="f69-V3-SWJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HY9-LW-yVc" firstAttribute="centerY" secondItem="ucT-IB-jRS" secondAttribute="centerY" id="dXU-AW-toa"/>
+                            <constraint firstItem="HY9-LW-yVc" firstAttribute="centerX" secondItem="ucT-IB-jRS" secondAttribute="centerX" id="um1-cU-oYK"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Safari" image="safari" catalog="system" selectedImage="safari" id="UCL-yu-NGQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRZ-Z7-qfX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3286.2595419847326" y="80.985915492957744"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="ol5-6v-ghS">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2qx-bc-6hx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wLE-ba-KrW">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="FHw-x4-ddJ"/>
+                        <segue destination="doI-qc-Jv4" kind="relationship" relationship="viewControllers" id="0aB-9N-wag"/>
+                        <segue destination="8aT-hg-WfB" kind="relationship" relationship="viewControllers" id="dKN-F7-qU7"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8XQ-At-aJ0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.64122137404578" y="3.5211267605633805"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="globe" catalog="system" width="128" height="123"/>
+        <image name="link" catalog="system" width="128" height="124"/>
+        <image name="safari" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
