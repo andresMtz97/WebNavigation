@@ -21,6 +21,9 @@
                                 <rect key="frame" x="145.66666666666666" y="408.66666666666669" width="102" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Open URL"/>
+                                <connections>
+                                    <action selector="openUrlButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Bw-Fi-QEq"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -41,26 +44,39 @@
         <!--WebKit-->
         <scene sceneID="J1c-P6-Rsz">
             <objects>
-                <viewController id="doI-qc-Jv4" sceneMemberID="viewController">
+                <viewController id="doI-qc-Jv4" customClass="WKWebViewController" customModule="WebNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9rR-Rt-VCz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="webkit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="il6-Hb-eiH">
-                                <rect key="frame" x="171.33333333333334" y="415.66666666666669" width="50.333333333333343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Td-4y-9rr">
+                                <rect key="frame" x="16" y="59" width="361" height="710"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="vFL-xh-2pD">
+                                <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GZg-3g-O85"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="il6-Hb-eiH" firstAttribute="centerY" secondItem="9rR-Rt-VCz" secondAttribute="centerY" id="5GO-ar-udS"/>
-                            <constraint firstItem="il6-Hb-eiH" firstAttribute="centerX" secondItem="9rR-Rt-VCz" secondAttribute="centerX" id="EKR-Gq-jic"/>
+                            <constraint firstItem="GZg-3g-O85" firstAttribute="bottom" secondItem="0Td-4y-9rr" secondAttribute="bottom" id="FlW-ud-dbx"/>
+                            <constraint firstItem="0Td-4y-9rr" firstAttribute="leading" secondItem="GZg-3g-O85" secondAttribute="leading" constant="16" id="G4f-QP-9hH"/>
+                            <constraint firstItem="GZg-3g-O85" firstAttribute="trailing" secondItem="0Td-4y-9rr" secondAttribute="trailing" constant="16" id="IRs-vz-GqU"/>
+                            <constraint firstItem="0Td-4y-9rr" firstAttribute="top" secondItem="GZg-3g-O85" secondAttribute="top" id="bvg-Rw-OVq"/>
+                            <constraint firstItem="vFL-xh-2pD" firstAttribute="centerY" secondItem="9rR-Rt-VCz" secondAttribute="centerY" id="jp5-to-HLn"/>
+                            <constraint firstItem="vFL-xh-2pD" firstAttribute="centerX" secondItem="9rR-Rt-VCz" secondAttribute="centerX" id="z9q-FW-RgI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="WebKit" image="globe" catalog="system" selectedImage="globe" id="ueE-zA-99v"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="vFL-xh-2pD" id="Zo3-3K-Gml"/>
+                        <outlet property="webView" destination="0Td-4y-9rr" id="u7h-Rv-lsR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey4-fO-dhm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -69,23 +85,25 @@
         <!--Safari-->
         <scene sceneID="B78-vU-2pE">
             <objects>
-                <viewController id="8aT-hg-WfB" sceneMemberID="viewController">
+                <viewController id="8aT-hg-WfB" customClass="SafariViewController" customModule="WebNavigation" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ucT-IB-jRS">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="safari" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HY9-LW-yVc">
-                                <rect key="frame" x="175.66666666666666" y="415.66666666666669" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="btA-Ke-gpD">
+                                <rect key="frame" x="132.66666666666666" y="408.66666666666669" width="127.99999999999997" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Launch Safari"/>
+                                <connections>
+                                    <action selector="launchSafariTapped:" destination="8aT-hg-WfB" eventType="touchUpInside" id="wmA-rL-e8D"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f69-V3-SWJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HY9-LW-yVc" firstAttribute="centerY" secondItem="ucT-IB-jRS" secondAttribute="centerY" id="dXU-AW-toa"/>
-                            <constraint firstItem="HY9-LW-yVc" firstAttribute="centerX" secondItem="ucT-IB-jRS" secondAttribute="centerX" id="um1-cU-oYK"/>
+                            <constraint firstItem="btA-Ke-gpD" firstAttribute="centerY" secondItem="ucT-IB-jRS" secondAttribute="centerY" id="bhh-QJ-L73"/>
+                            <constraint firstItem="btA-Ke-gpD" firstAttribute="centerX" secondItem="ucT-IB-jRS" secondAttribute="centerX" id="ySv-EG-kti"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Safari" image="safari" catalog="system" selectedImage="safari" id="UCL-yu-NGQ"/>
@@ -100,6 +118,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2qx-bc-6hx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wLE-ba-KrW">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

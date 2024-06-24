@@ -6,14 +6,52 @@
 //
 
 import UIKit
+import Network
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var internetStatus = false
+    var internetType = ""
+    var internetIsExpensive = false
+    let monitor = NWPathMonitor()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Add code to detect network connection
+        monitor.start(queue:DispatchQueue.global(qos: .default))
+        monitor.pathUpdateHandler = { path in
+            if path.status == .satisfied {
+                self.internetStatus = true
+                
+                //Detects connection type
+                if path.usesInterfaceType(.wifi){
+                    self.internetType = "WiFi"
+                }
+                else if path.usesInterfaceType(.cellular){
+                    self.internetType = "Cellular"
+                } else if path.usesInterfaceType(.wiredEthernet) {
+                    self.internetType = "Wired Ethernet"
+                }
+                else {
+                    self.internetType = "Unknown"
+                }
+                //Detects if it is expensive
+//                if path.isExpensive {
+//                    self.internetIsExpensive = true
+//                }
+            }
+            else {
+                self.internetStatus = false
+            }
+            
+            print("internetType: ",self.internetType.description)
+            print("internetStatus: ",self.internetStatus.description)
+            print("internetIsExpendive: ",self.internetIsExpensive.description)
+        }
+        
         return true
     }
 

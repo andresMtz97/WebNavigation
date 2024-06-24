@@ -13,6 +13,8 @@
 		7B5D2C5B2BDC344000E446D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5D2C592BDC344000E446D2 /* Main.storyboard */; };
 		7B5D2C5D2BDC344100E446D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5D2C5C2BDC344100E446D2 /* Assets.xcassets */; };
 		7B5D2C602BDC344100E446D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B5D2C5E2BDC344100E446D2 /* LaunchScreen.storyboard */; };
+		8640A6222BDD8041004A30F0 /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8640A6212BDD8041004A30F0 /* SafariViewController.swift */; };
+		8640A6242BDD844B004A30F0 /* WKWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8640A6232BDD844B004A30F0 /* WKWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		7B5D2C5C2BDC344100E446D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B5D2C5F2BDC344100E446D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B5D2C612BDC344100E446D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8640A6212BDD8041004A30F0 /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
+		8640A6232BDD844B004A30F0 /* WKWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				7B5D2C5C2BDC344100E446D2 /* Assets.xcassets */,
 				7B5D2C5E2BDC344100E446D2 /* LaunchScreen.storyboard */,
 				7B5D2C612BDC344100E446D2 /* Info.plist */,
+				8640A6212BDD8041004A30F0 /* SafariViewController.swift */,
+				8640A6232BDD844B004A30F0 /* WKWebViewController.swift */,
 			);
 			path = WebNavigation;
 			sourceTree = "<group>";
@@ -138,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8640A6242BDD844B004A30F0 /* WKWebViewController.swift in Sources */,
 				7B5D2C582BDC344000E446D2 /* ViewController.swift in Sources */,
 				7B5D2C542BDC344000E446D2 /* AppDelegate.swift in Sources */,
+				8640A6222BDD8041004A30F0 /* SafariViewController.swift in Sources */,
 				7B5D2C562BDC344000E446D2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
